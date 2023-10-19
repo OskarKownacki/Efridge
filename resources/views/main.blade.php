@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="./css/app.css">
     <title>Hackheroes Project </title>
 
-
+@livewireStyles
 </head>
 
 <body>
+
+<livewire:products />
+    @livewireScripts
 </body>
