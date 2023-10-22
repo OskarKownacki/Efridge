@@ -14,6 +14,5 @@
 
 <body>
 
-<livewire:products />
     @livewireScripts
 </body>
