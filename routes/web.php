@@ -15,10 +15,7 @@ use App\Http\Controllers\LoginRegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/main', function () {
-    return view('main'); 
+    return view('main');
 });
 Route::get('/quiz', function () {
     return view('quiz'); 
