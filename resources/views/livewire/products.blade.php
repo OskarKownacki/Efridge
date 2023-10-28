@@ -12,9 +12,9 @@
             @if(!empty($tableall))
             @foreach($tableall as $table)
             <tr>
-                <th scope="row">{{ $table["product_id"] }}</th>
-                <td>{{ $table["name"] }}</td>
-                <td>{{ $table["amount"] }}</td>
+                <th scope="row"></th>
+                <td>{{ $table->name }}</td>
+                <td>{{ $table->amount }}</td>
                 <td>
                     <form wire:submit="add">
                         <input type="text" wire:model="amount">
