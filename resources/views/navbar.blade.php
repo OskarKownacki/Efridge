@@ -10,7 +10,7 @@
 
 </head>
     
-<body>
+<body style="box-sizing: border-box">
 
     <nav class="navbar navbar-expand-lg bg-body-teritary bg-dark bg-gradient stick-top">
         <div class="container-fluid">

@@ -10,7 +10,7 @@ class efridge_product extends Model
     use HasFactory;
 
     protected $table = 'efridge_products';
-    public function user() 
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

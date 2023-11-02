@@ -1,4 +1,4 @@
-<div class="container fs-6">
+<div class="fs-6">
     <table class="table">
         <thead>
             <tr>
@@ -16,9 +16,9 @@
                 <td>{{ $table->name }}</td>
                 <td>{{ $table->amount }}</td>
                 <td>
-                    <form wire:submit="add">
-                        <input type="text" wire:model="amount">
-                        <button type="submit">Dodaj</button>
+                    <form wire:submit="add({{ $table->id }})">
+                        <input type="number" wire:model="amounts.{{ $table->id }}" placeholder="0"> 
+                        <button type="submit" class="btn">Dodaj</button>
                     </form>
                 </td>
             </tr>
@@ -29,7 +29,7 @@
                 <form wire:submit="addproduct">
                     <input type="text" wire:model="namenew">
 
-                    <button type="submit">Dodaj nowy produkt</button>
+                    <button type="submit" class="btn">Dodaj nowy produkt</button>
                 </form>
             </td>
             <td></td>

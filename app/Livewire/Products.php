@@ -16,39 +16,36 @@ use function Psy\debug;
 class Products extends Component
 {
 
-    public $products; 
-    public $amount;
+    public $amounts = [];
     public $tableall;
     public $namenew;
-    public $i = 1;
-    
- 
-    public function add()
+
+
+    public function add($id)
     {
-            $this->tableall = $this->products + $this->amount;
+        if (!empty($this->amounts['id'])) {
+            Efridge_product::where('id', $id)
+                ->increment('amount', $this->amounts[$id]);
+        }
     }
 
     public function addproduct(Request $request)
     {
 
-        if(Auth::check())
-        {
+        if (Auth::check()) {
             DB::table('efridge_products')->insert([
                 'name' => $this->namenew,
-                'amount' => 10,
+                'amount' => 0,
                 'user_id' => $request->user()->id
             ]);
-        }  
-    
-    
-
+        }
     }
     public function render(Request $request)
     {
-        if(Auth::check()){
-        $efridge_product = Efridge_product::where('user_id', $request->user()->id)->get();
+        if (Auth::check()) {
+            $efridge_product = Efridge_product::where('user_id', $request->user()->id)->get();
 
-        $this->tableall = $efridge_product;
+            $this->tableall = $efridge_product;
         }
         return view('livewire.products');
     }
