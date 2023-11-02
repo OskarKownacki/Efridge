@@ -23,7 +23,7 @@ class Products extends Component
 
     public function add($id)
     {
-        if (!empty($this->amounts['id'])) {
+        if (array_key_exists($id, $this->amounts)) {
             Efridge_product::where('id', $id)
                 ->increment('amount', $this->amounts[$id]);
         }

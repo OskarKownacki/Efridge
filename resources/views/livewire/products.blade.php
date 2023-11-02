@@ -18,7 +18,7 @@
                 <td>
                     <form wire:submit="add({{ $table->id }})">
                         <input type="number" wire:model="amounts.{{ $table->id }}" placeholder="0"> 
-                        <button type="submit" class="btn">Dodaj</button>
+                        <button type="submit" class="btn btn-dark">Dodaj</button>
                     </form>
                 </td>
             </tr>
@@ -27,9 +27,9 @@
             <th scope="row"></th>
             <td>
                 <form wire:submit="addproduct">
-                    <input type="text" wire:model="namenew">
+                    <input type="text" wire:model="namenew" class="">
 
-                    <button type="submit" class="btn">Dodaj nowy produkt</button>
+                    <button type="submit" class="btn btn-dark">Dodaj nowy produkt</button>
                 </form>
             </td>
             <td></td>
