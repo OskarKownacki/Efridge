@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Answer;
+use App\Models\Ingredient;
 use App\Models\Question;
 use Livewire\Component;
 
@@ -21,12 +22,17 @@ class Dashboard extends Component
             'answer' => $this->answerContent,
             'question_id' => $id
         ]);
-
     }
-
+    
+    public function addRecipe()
+    {
+    }
 
     public function render()
     {
+        $query = Ingredient::find(1);
+
+        dd($query->recipes);
         return view('livewire.dashboard');
     }
 }

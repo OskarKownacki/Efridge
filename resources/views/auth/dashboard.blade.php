@@ -16,11 +16,7 @@
                         You are logged in!
                     </div>       
                 @endif                 --}}
-                @role('admin')
                     <livewire:dashboard/>
-                @else
-                Nothing to display 
-                @endrole
             </div>
         </div>
     </div>    
