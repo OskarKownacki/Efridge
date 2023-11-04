@@ -12,7 +12,7 @@
     
 <body style="box-sizing: border-box">
 
-    <nav class="navbar navbar-expand-lg bg-body-teritary bg-dark bg-gradient stick-top">
+    <nav class="navbar navbar-expand-lg bg-body-teritary bg-gradient stick-top" style="background-color: teal" >
         <div class="container-fluid">
             <a class="navbar-brand mb-0 h1 text-white" href="/">Hackheroes</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
