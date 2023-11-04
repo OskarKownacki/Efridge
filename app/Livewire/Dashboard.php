@@ -2,17 +2,32 @@
 
 namespace App\Livewire;
 
+use App\Models\Amount;
 use App\Models\Answer;
-use App\Models\Ingredient;
-use App\Models\Question;
+use App\Models\Recipe;
 use Livewire\Component;
+use App\Models\Question;
+use App\Models\Ingredient;
 
 class Dashboard extends Component
 {
     public $questionContent;
     public $answerContent;
-
-
+    public $recipeTitle;
+    public $recipeContent;
+    public $recipeAmount;
+    public $recipeIngredients=[ ];
+    public $increment = 1;
+    
+    public function addAnotherIngredient()
+    {
+        
+        $this->recipeIngredients[$this->increment]['name'] = '';
+        $this->recipeIngredients[$this->increment]['amount'] = '';
+        $this->recipeIngredients[$this->increment]['id'] = $this->increment;
+        $this->increment++;
+    
+    }
     public function addQuestion()
     {
        $id = Question::insertGetId([
@@ -26,13 +41,27 @@ class Dashboard extends Component
     
     public function addRecipe()
     {
+        $idRecipe = Recipe::insertGetId([
+            'name' => $this->recipeTitle 
+        ]);
+        
+        foreach($this->recipeIngredients as $recipeIngredients){
+        $idIngredient = Ingredient::whereNot('name',$recipeIngredients['name'])
+        ->insertGetId([
+            'name'=>$recipeIngredients['name']
+        ]);
+        Amount::insert([
+            'recipe_id' => $idRecipe, 
+            'ingredient_id' => $idIngredient,
+            'amount' => $recipeIngredients['amount']
+        ]);
+        }
+        
     }
 
     public function render()
     {
         $query = Ingredient::find(1);
-
-        dd($query->recipes);
         return view('livewire.dashboard');
     }
 }
