@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-header">Dashboard</div>
             <div class="card-body">
-                @if ($message = Session::get('success'))
+                {{-- @if ($message = Session::get('success'))
                     <div class="alert alert-success">
                         {{ $message }}
                     </div>
@@ -15,10 +15,13 @@
                     <div class="alert alert-success">
                         You are logged in!
                     </div>       
-                @endif                
+                @endif                 --}}
+                    <livewire:dashboard/>
             </div>
         </div>
     </div>    
 </div>
-    
+@livewireStyles
+
+@livewireScripts
 @endsection
