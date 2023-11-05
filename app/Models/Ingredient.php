@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -10,8 +11,8 @@ class Ingredient extends Model
 {
     use HasFactory;
 
-    public function recipes(): BelongsToMany
+    public function recipes(): BelongsTo
     {
-        return $this->belongsToMany(Recipe::class, 'amounts')->withPivot('amount');
+        return $this->belongsTo(Recipe::class);
     }
 }

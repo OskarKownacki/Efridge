@@ -18,7 +18,24 @@ class Dashboard extends Component
     public $recipeAmount;
     public $recipeIngredients=[ ];
     public $increment = 1;
-    
+    public $queryQuestions;
+    public $queryRecipes;
+
+    public function deleteQuestion($id)
+    {
+        $query = Question::with('answer')->where('id', $id)->get();
+        $query->first()->answer()->delete();
+        $query->first()->delete();    
+    }
+    public function deleteRecipe($id)
+    {
+        $query = Recipe::with('ingredients')->where('id', $id)->get();
+        foreach($query->first()->ingredients() as $ingredient){
+        $ingredient->delete();
+        }
+        $query->first()->delete();
+    }
+
     public function addAnotherIngredient()
     {
         
@@ -42,26 +59,27 @@ class Dashboard extends Component
     public function addRecipe()
     {
         $idRecipe = Recipe::insertGetId([
-            'name' => $this->recipeTitle 
+            'name' => $this->recipeTitle, 
+            'description' => $this->recipeContent
         ]);
         
         foreach($this->recipeIngredients as $recipeIngredients){
         $idIngredient = Ingredient::whereNot('name',$recipeIngredients['name'])
         ->insertGetId([
-            'name'=>$recipeIngredients['name']
-        ]);
-        Amount::insert([
+            'name'=>$recipeIngredients['name'],
             'recipe_id' => $idRecipe, 
-            'ingredient_id' => $idIngredient,
             'amount' => $recipeIngredients['amount']
         ]);
-        }
-        
+    
+    }
     }
 
     public function render()
     {
-        $query = Ingredient::find(1);
+        $this->queryQuestions = Question::with('answer')->get();
+        $this->queryRecipes = Recipe::with('ingredients')->get();
+        
+        
         return view('livewire.dashboard');
     }
 }
