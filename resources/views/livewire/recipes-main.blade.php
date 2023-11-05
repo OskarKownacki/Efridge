@@ -2,7 +2,7 @@
     @foreach($recipeName as $Name)
     <div class="col pl-5 ">
         <div class="p-5 my-5 h-75 text-white text-center" style="background-color: teal" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom{{ $Name['name'] }}" aria-controls="offcanvasBottom">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+            <h3>Przepis: {{ $Name['name'] }}</h3>
         
         </div>
     </div>
