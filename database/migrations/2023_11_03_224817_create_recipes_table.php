@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->tinyText('name');
+            $table->text('description');
             $table->timestamps();
         });
     }

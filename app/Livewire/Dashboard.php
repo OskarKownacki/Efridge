@@ -42,21 +42,19 @@ class Dashboard extends Component
     public function addRecipe()
     {
         $idRecipe = Recipe::insertGetId([
-            'name' => $this->recipeTitle 
+            'name' => $this->recipeTitle, 
+            'description' => $this->recipeContent
         ]);
         
         foreach($this->recipeIngredients as $recipeIngredients){
         $idIngredient = Ingredient::whereNot('name',$recipeIngredients['name'])
         ->insertGetId([
-            'name'=>$recipeIngredients['name']
-        ]);
-        Amount::insert([
+            'name'=>$recipeIngredients['name'],
             'recipe_id' => $idRecipe, 
-            'ingredient_id' => $idIngredient,
             'amount' => $recipeIngredients['amount']
         ]);
-        }
-        
+    
+    }
     }
 
     public function render()
