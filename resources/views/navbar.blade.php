@@ -12,7 +12,8 @@
 </head>
     
 <body style="box-sizing: border-box">
-
+    @livewireStyles
+    @livewireScripts
     <nav class="navbar navbar-expand-lg bg-body-teritary bg-gradient stick-top" style="background-color: teal" >
         <div class="container-fluid">
             <a class="navbar-brand mb-0 h1 text-white" href="/">Hackheroes</a>
