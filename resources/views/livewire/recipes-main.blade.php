@@ -1,13 +1,13 @@
 <div class="row h-100">
     @foreach($recipeName as $Name)
     <div class="col pl-5 ">
-        <div class="p-5 my-5 h-75 text-white text-center" style="background-color: teal" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom{{ $Name['name'] }}" aria-controls="offcanvasBottom">
+        <div class="p-5 my-5 h-75 text-white text-center" style="background-color: teal" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom{{ str_replace(' ', '',$Name['name']) }}" aria-controls="offcanvasBottom">
             <h3>Przepis: {{ $Name['name'] }}</h3>
         
         </div>
     </div>
 
-    <div class="offcanvas offcanvas-bottom h-75" tabindex="-1" id="offcanvasBottom{{ $Name['name'] }}" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas offcanvas-bottom h-75" tabindex="-1" id="offcanvasBottom{{ str_replace(' ', '',$Name['name']) }}" aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
           <h2 class="offcanvas-title" id="offcanvasBottomLabel">Przepis na {{ $Name['name'] }}</h2>
           
