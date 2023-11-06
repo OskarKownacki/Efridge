@@ -5,7 +5,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nazwa produktu</th>
                 <th scope="col">Posiadana ilość</th>
-                <th scope="col">Dodaj</th>
+                <th scope="col">Dodaj (wartość podaj w gramach)</th>
             </tr>
         </thead>
         <tbody>
@@ -14,7 +14,7 @@
             <tr>
                 <th scope="row"></th>
                 <td>{{ $table->name }}</td>
-                <td>{{ $table->amount }}</td>
+                <td>{{ $table->amount }} g</td>
                 <td>
                     <form wire:submit="add({{ $table->id }})">
                         <input type="number" wire:model="amounts.{{ $table->id }}" placeholder="0"> 

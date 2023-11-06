@@ -63,8 +63,8 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" id="recipeConten" aria-describedby="textHelp"
-                                wire:model="recipeContent">
+                            <textarea type="text" class="form-control" id="recipeConten" aria-describedby="textHelp"
+                                wire:model="recipeContent"> </textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -78,12 +78,12 @@
                     @foreach($recipeIngredients as $recipeIngredients)
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" id="recipeIngredients" aria-describedby="textHelp"
-                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.name">
+                            <input type="text" class="form-control " id="recipeIngredients" aria-describedby="textHelp"
+                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.name" style="margin-top:1%">
                         </div>
                         <div class="col">
                             <input type="number" class="form-control" id="recipeAmount" aria-describedby="textHelp"
-                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.amount" style=>
+                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.amount" style="margin-top:1%">
                         </div>
                     </div>
                     @endforeach
