@@ -53,7 +53,7 @@ class LoginRegisterController extends Controller
         $credentials = $request->only('email', 'password');
         Auth::attempt($credentials);
         $request->session()->regenerate();
-        return redirect()->route('dashboard')
+        return redirect()->route('main')
         ->withSuccess('You have successfully registered & logged in!');
     }
 
@@ -98,11 +98,24 @@ class LoginRegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard()
+    public function main()
     {
         if(Auth::check())
         {
             return view('main');
+        }
+        
+        return redirect()->route('login')
+            ->withErrors([
+            'email' => 'Please login to access the mainpage.',
+        ])->onlyInput('email');
+    } 
+
+    public function dashboard()
+    {
+        if(Auth::check())
+        {
+            return view('auth.dashboard');
         }
         
         return redirect()->route('login')
