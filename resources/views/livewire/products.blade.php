@@ -17,7 +17,7 @@
                 <td>{{ $table->amount }} g</td>
                 <td>
                     <form wire:submit="add({{ $table->id }})">
-                        <input type="number" wire:model="amounts.{{ $table->id }}" placeholder="0"> 
+                        <input type="number" wire:model="amounts.{{ $table->id }}" placeholder="0">
                         <button type="submit" class="btn btn-dark">Dodaj</button>
                     </form>
                 </td>
@@ -38,5 +38,5 @@
             </tr>
         </tbody>
     </table>
-  
+
 </div>

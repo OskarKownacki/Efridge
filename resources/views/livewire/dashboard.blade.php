@@ -1,3 +1,4 @@
+@role('admin')
 <div class="fs-6">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -79,11 +80,13 @@
                     <div class="row">
                         <div class="col">
                             <input type="text" class="form-control " id="recipeIngredients" aria-describedby="textHelp"
-                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.name" style="margin-top:1%">
+                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.name"
+                                style="margin-top:1%">
                         </div>
                         <div class="col">
                             <input type="number" class="form-control" id="recipeAmount" aria-describedby="textHelp"
-                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.amount" style="margin-top:1%">
+                                wire:model="recipeIngredients.{{ $recipeIngredients['id'] }}.amount"
+                                style="margin-top:1%">
                         </div>
                     </div>
                     @endforeach
@@ -111,8 +114,8 @@
                         <td>{{ $question->question }}</td>
                         <td>{{ $question->answer->answer }}</td>
                         <td>
-                            <button type="button" class="btn bg-transparent" style="margin-top:1%" wire:click="deleteQuestion({{ $question->id }})"><i
-                                    class="bi bi-trash"></i></button>
+                            <button type="button" class="btn bg-transparent" style="margin-top:1%"
+                                wire:click="deleteQuestion({{ $question->id }})"><i class="bi bi-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -135,14 +138,16 @@
                     <tr>
                         <td>{{ $Recipe->name }}</td>
                         <td>{{ $Recipe->description }}</td>
-                        <td><ul>
-                            @foreach($Recipe->ingredients as $ingredients)
-                            <li>{{  $ingredients->name }} {{ $ingredients->amount }}g </li>
-                            @endforeach
-                          </ul></td>
                         <td>
-                            <button type="button" class="btn bg-transparent" style="margin-top:1%" wire:click="deleteRecipe({{ $Recipe->id }})"><i
-                                    class="bi bi-trash"></i></button>
+                            <ul>
+                                @foreach($Recipe->ingredients as $ingredients)
+                                <li>{{  $ingredients->name }} {{ $ingredients->amount }}g </li>
+                                @endforeach
+                            </ul>
+                        </td>
+                        <td>
+                            <button type="button" class="btn bg-transparent" style="margin-top:1%"
+                                wire:click="deleteRecipe({{ $Recipe->id }})"><i class="bi bi-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -152,3 +157,11 @@
         </div>
     </div>
 </div>
+@else
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-danger" style="margin-top:1%" wire:click="deleteUser">Usuń
+            użytkownika</button>
+    </div>
+</div>
+@endrole

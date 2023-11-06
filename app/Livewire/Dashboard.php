@@ -8,6 +8,8 @@ use App\Models\Recipe;
 use Livewire\Component;
 use App\Models\Question;
 use App\Models\Ingredient;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class Dashboard extends Component
 {
@@ -20,6 +22,12 @@ class Dashboard extends Component
     public $increment = 1;
     public $queryQuestions;
     public $queryRecipes;
+
+    public function deleteUser(Request $request)
+    {
+        User::where('id',$request->user()->id)->delete();
+        return redirect('main');
+    }
 
     public function deleteQuestion($id)
     {
