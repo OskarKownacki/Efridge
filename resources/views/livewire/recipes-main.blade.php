@@ -15,7 +15,6 @@
         </div>
         
         <div class="offcanvas-body small">
-          <h5 class="bi bi-stopwatch"> 25 min</h5>
           <h4>Składniki:</h5>
           <ul>
             @foreach($Name['ingredients'] as $ingredients)
@@ -24,9 +23,7 @@
           </ul>
 
           <h4>Przygotowanie:</h5>
-            <ol>
-                <li>{{ $Name['description'] }}</li>
-            </ol>
+                <p>{{ $Name['description'] }}</p>
 
         </div>
     </div>
