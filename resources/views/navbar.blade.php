@@ -16,7 +16,7 @@
     @livewireScripts
     <nav class="navbar navbar-expand-lg bg-body-teritary bg-gradient stick-top" style="background-color: teal">
         <div class="container-fluid">
-            <a class="navbar-brand mb-0 h1 text-white" href="/">Hackheroes</a>
+            <a class="navbar-brand mb-0 h1 text-white" href="/">Efridge</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
                     <a class="nav-link active text-white" aria-current="page" href="/quiz">Quiz</a>
