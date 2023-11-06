@@ -11,7 +11,7 @@
 
 </head>
     
-<body style="box-sizing: border-box">
+<body style="box-sizing: border-box" class="d-flex flex-column min-vh-100">
     @livewireStyles
     @livewireScripts
     <nav class="navbar navbar-expand-lg bg-body-teritary bg-gradient stick-top" style="background-color: teal" >
@@ -20,7 +20,6 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
                     <a class="nav-link active text-white" aria-current="page" href="/quiz">Quiz</a>
-                    <a class="nav-link active text-white" aria-current="page" href="/aboutus">About Us</a>
                     <a class="nav-link active text-white" aria-current="page" href="#"></a>
                 </div>
             </div>
@@ -68,4 +67,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     @yield('content')
+    <footer class="py-5 mt-auto" style="background-color: teal">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        </div>
+    </footer>
+    
 </body>

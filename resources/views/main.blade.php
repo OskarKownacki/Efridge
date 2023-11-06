@@ -2,18 +2,24 @@
 @section('content')
 
 <!-- Header - set the background image for the header in the line below-->
-<header class="py-5 bg-image-full justify-content-center" style="filter:brightness(50%); background-image: url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+<header class="py-5 bg-image-full justify-content-center" style="background-image: url('https://i.imgur.com/7h5jR0m.jpg'); background-size:cover">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <div class="text-center my-5" style="filter:brightness(100%);">
-        <h1 class="text-white fs-1 fw-bolder">E-Fridge</h1>
+        <h1 class="text-white fs-1 fw-bolder">E-Fridge </h1>
         <p class="text-white mb-0">Your recipe organizer</p>
+        {{-- <img src="https://i.imgur.com/8YEpFjB.png" style="width:100px;height:100px;float:left;"> --}}
     </div>  
     
 </header>
 <!-- Content section-->
 <section class="py-5" >
     <div class="container h-100">
+        @auth
        <livewire:recipes-main/>
+       @endauth
+       @guest
+           <p class="fs-2">Here your recipes will be displayed! Log in to use that feature.</p>
+       @endguest
     </div>
 </section>
 <!-- Image element - set the background image for the header in the line below-->
@@ -26,16 +32,15 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-12">
-                <livewire:products/>
+                @auth
+                <livewire:products/>  
+                @endauth
+                @guest
+                <p class="fs-2">Here your products will be displayed! Log in to use that feature.</p>
+                @endguest
             </div>
         </div>
     </div>
 </section>
 <!-- Footer-->
-<footer class="py-5" style="background-color: teal">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
-    </div>
-</footer>
-
 @endsection

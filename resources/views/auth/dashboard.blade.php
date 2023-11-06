@@ -16,7 +16,11 @@
                         You are logged in!
                     </div>       
                 @endif                 --}}
+                @role('admin')
                     <livewire:dashboard/>
+                @else 
+                Delete account 
+                @endrole 
             </div>
         </div>
     </div>    
