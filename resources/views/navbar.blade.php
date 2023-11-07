@@ -76,6 +76,7 @@
     <footer class="py-5 mt-auto" style="background-color: teal">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white"><a href="https://www.freepik.com/free-photo/food-vegetable-colorful-background-tasty-fresh-vegetables-wooden-table-top-view-with-copy-space_4149857.htm#query=healthy%20ingredients&position=4&from_view=search&track=ais">Image by valeria_aksakova</a> on Freepik</p>
         </div>
     </footer>
 
