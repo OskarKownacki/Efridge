@@ -5,7 +5,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nazwa produktu</th>
                 <th scope="col">Posiadana ilość</th>
-                <th scope="col">Dodaj (wartość podaj w gramach)</th>
+                <th scope="col">Dodaj (wartość podaj w gramach, w celu odjęcia podaj ujemną liczbę)</th>
             </tr>
         </thead>
         <tbody>

@@ -18,7 +18,7 @@ class RecipesMain extends Component
     public function render(Request $request)
     {
         $this->recipeName=collect([]);
-        $queryUser = Efridge_product::where('user_id', '=', 1);
+        $queryUser = Efridge_product::where('user_id', '=', $request->user()->id);
         $query = Recipe::with('ingredients');
         foreach($query->get() as $query){
         $diff = $query->ingredients();

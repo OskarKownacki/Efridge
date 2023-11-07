@@ -19,7 +19,6 @@
             <a class="navbar-brand mb-0 h1 text-white" href="/">Efridge</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ">
-                    <a class="nav-link active text-white" aria-current="page" href="/quiz">Quiz</a>
                     <a class="nav-link active text-white" aria-current="page" href="#"></a>
                 </div>
             </div>
@@ -40,20 +39,20 @@
                             href="{{ route('register') }}">Register</a>
                     </li>
                     @else
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropstart">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu">
                             <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">Logout</a>
+                        document.getElementById('logout-form').submit();">Wyloguj</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     @csrf
                                 </form>
                             </li>
                             <li> <a class="dropdown-item" href="{{ route('dashboard') }}" onclick="event.preventDefault();
-                            document.getElementById('dashboard-form').submit();">Dashboard</a>
+                            document.getElementById('dashboard-form').submit();">Panel sterowania</a>
                                 <form id="dashboard-form" action="{{ route('dashboard') }}" method="GET">
                                     @csrf
                                 </form>
@@ -75,7 +74,7 @@
     @yield('content')
     <footer class="py-5 mt-auto" style="background-color: teal">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white">Page by: E-fridge team</p>
             <p class="m-0 text-center text-white"><a href="https://www.freepik.com/free-photo/food-vegetable-colorful-background-tasty-fresh-vegetables-wooden-table-top-view-with-copy-space_4149857.htm#query=healthy%20ingredients&position=4&from_view=search&track=ais">Image by valeria_aksakova</a> on Freepik</p>
         </div>
     </footer>
